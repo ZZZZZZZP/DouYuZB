@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ZPMainTabBarCtrl.swift
 //  DYZB
 //
 //  Created by 张鹏 on 16/10/1.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ZPMainTabBarCtrl: UITabBarController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("hello world")
+        view.backgroundColor = UIColor.red
     }
 
 }
-

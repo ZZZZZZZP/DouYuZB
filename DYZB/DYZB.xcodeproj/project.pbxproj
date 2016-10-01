@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		6E8FF3E51D9FBD3500AA96EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8FF3E41D9FBD3500AA96EB /* AppDelegate.swift */; };
-		6E8FF3E71D9FBD3500AA96EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8FF3E61D9FBD3500AA96EB /* ViewController.swift */; };
-		6E8FF3EA1D9FBD3500AA96EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8FF3E81D9FBD3500AA96EB /* Main.storyboard */; };
 		6E8FF3EC1D9FBD3500AA96EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E8FF3EB1D9FBD3500AA96EB /* Assets.xcassets */; };
-		6E8FF3EF1D9FBD3500AA96EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8FF3ED1D9FBD3500AA96EB /* LaunchScreen.storyboard */; };
+		6EC7439C1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7439B1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift */; };
+		6EC7439E1D9FFF84006501D6 /* ZPCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7439D1D9FFF84006501D6 /* ZPCommon.swift */; };
+		6EC743A11DA0009C006501D6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC743A01DA0009C006501D6 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6E8FF3E11D9FBD3500AA96EB /* DYZB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYZB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E8FF3E41D9FBD3500AA96EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6E8FF3E61D9FBD3500AA96EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6E8FF3E91D9FBD3500AA96EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E8FF3EB1D9FBD3500AA96EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6E8FF3EE1D9FBD3500AA96EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E8FF3F01D9FBD3500AA96EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EC7439B1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPMainTabBarCtrl.swift; sourceTree = "<group>"; };
+		6EC7439D1D9FFF84006501D6 /* ZPCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPCommon.swift; sourceTree = "<group>"; };
+		6EC743A01DA0009C006501D6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,198 @@
 		6E8FF3E31D9FBD3500AA96EB /* DYZB */ = {
 			isa = PBXGroup;
 			children = (
+				6EC743831D9FF917006501D6 /* Classes */,
 				6E8FF3E41D9FBD3500AA96EB /* AppDelegate.swift */,
-				6E8FF3E61D9FBD3500AA96EB /* ViewController.swift */,
-				6E8FF3E81D9FBD3500AA96EB /* Main.storyboard */,
 				6E8FF3EB1D9FBD3500AA96EB /* Assets.xcassets */,
-				6E8FF3ED1D9FBD3500AA96EB /* LaunchScreen.storyboard */,
 				6E8FF3F01D9FBD3500AA96EB /* Info.plist */,
 			);
 			path = DYZB;
+			sourceTree = "<group>";
+		};
+		6EC743831D9FF917006501D6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6EC743901D9FF917006501D6 /* Main */,
+				6EC743881D9FF917006501D6 /* Home */,
+				6EC7438C1D9FF917006501D6 /* Live */,
+				6EC743841D9FF917006501D6 /* Follow */,
+				6EC743941D9FF917006501D6 /* Profile */,
+				6EC743981D9FF917006501D6 /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6EC743841D9FF917006501D6 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				6EC743851D9FF917006501D6 /* Controller */,
+				6EC743861D9FF917006501D6 /* Model */,
+				6EC743871D9FF917006501D6 /* View */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		6EC743851D9FF917006501D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6EC743861D9FF917006501D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6EC743871D9FF917006501D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6EC743881D9FF917006501D6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6EC743891D9FF917006501D6 /* Controller */,
+				6EC7438A1D9FF917006501D6 /* Model */,
+				6EC7438B1D9FF917006501D6 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6EC743891D9FF917006501D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6EC7438A1D9FF917006501D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6EC7438B1D9FF917006501D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6EC7438C1D9FF917006501D6 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				6EC7438D1D9FF917006501D6 /* Controller */,
+				6EC7438E1D9FF917006501D6 /* Model */,
+				6EC7438F1D9FF917006501D6 /* View */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		6EC7438D1D9FF917006501D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6EC7438E1D9FF917006501D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6EC7438F1D9FF917006501D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6EC743901D9FF917006501D6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6EC743911D9FF917006501D6 /* Controller */,
+				6EC743921D9FF917006501D6 /* Model */,
+				6EC743931D9FF917006501D6 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6EC743911D9FF917006501D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6EC7439B1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6EC743921D9FF917006501D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6EC743931D9FF917006501D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6EC743941D9FF917006501D6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				6EC743951D9FF917006501D6 /* Controller */,
+				6EC743961D9FF917006501D6 /* Model */,
+				6EC743971D9FF917006501D6 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		6EC743951D9FF917006501D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6EC743961D9FF917006501D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6EC743971D9FF917006501D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6EC743981D9FF917006501D6 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				6EC7439F1DA0002D006501D6 /* Extension */,
+				6EC7439D1D9FFF84006501D6 /* ZPCommon.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		6EC7439F1DA0002D006501D6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6EC743A01DA0009C006501D6 /* UIView.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E8FF3EF1D9FBD3500AA96EB /* LaunchScreen.storyboard in Resources */,
 				6E8FF3EC1D9FBD3500AA96EB /* Assets.xcassets in Resources */,
-				6E8FF3EA1D9FBD3500AA96EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,31 +319,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E8FF3E71D9FBD3500AA96EB /* ViewController.swift in Sources */,
+				6EC743A11DA0009C006501D6 /* UIView.swift in Sources */,
+				6EC7439E1D9FFF84006501D6 /* ZPCommon.swift in Sources */,
 				6E8FF3E51D9FBD3500AA96EB /* AppDelegate.swift in Sources */,
+				6EC7439C1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		6E8FF3E81D9FBD3500AA96EB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E8FF3E91D9FBD3500AA96EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6E8FF3ED1D9FBD3500AA96EB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E8FF3EE1D9FBD3500AA96EB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6E8FF3F11D9FBD3500AA96EB /* Debug */ = {
@@ -262,6 +427,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 8R458KGEBG;
 				INFOPLIST_FILE = DYZB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.520it.zp.DYZB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,6 +442,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 8R458KGEBG;
 				INFOPLIST_FILE = DYZB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.520it.zp.DYZB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
