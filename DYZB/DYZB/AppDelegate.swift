@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 3.显示窗口
         window?.makeKeyAndVisible()
         
+        // 设置全局tabBar渲染颜色
+        UITabBar.appearance(whenContainedInInstancesOf: [ZPMainTabBarCtrl.self]).tintColor = UIColor.orange
+        
         return true
     }
 }
