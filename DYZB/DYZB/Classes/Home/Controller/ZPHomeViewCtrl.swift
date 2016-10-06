@@ -15,7 +15,6 @@ class ZPHomeViewCtrl: UIViewController {
         let titles = ["推荐", "游戏", "娱乐", "趣玩"]
         let pageTitleView = ZPPageTitleView(frame: CGRect(x: 0, y: 0, width: ZPScreenW, height: 44), titles: titles)
         
-        
         return pageTitleView
     }()
     
