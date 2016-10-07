@@ -10,3 +10,6 @@ import UIKit
 
 let ZPScreenW = UIScreen.main.bounds.width
 let ZPScreenH = UIScreen.main.bounds.height
+
+let kNavBar: CGFloat = 64
+let ktabBar: CGFloat = 44

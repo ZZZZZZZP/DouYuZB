@@ -8,26 +8,44 @@
 
 import UIKit
 
+private let kTitleViewH: CGFloat = 40
+
 class ZPHomeViewCtrl: UIViewController {
 
     // MARK: - 懒加载属性
-    private lazy var pageTitleView: UIView = {
+    fileprivate lazy var pageTitleView: ZPPageTitleView = {[weak self] in
         let titles = ["推荐", "游戏", "娱乐", "趣玩"]
-        let pageTitleView = ZPPageTitleView(frame: CGRect(x: 0, y: 0, width: ZPScreenW, height: 44), titles: titles)
+        let pageTitleView = ZPPageTitleView(frame: CGRect(x: 0, y: kNavBar, width: ZPScreenW, height: kTitleViewH), titles: titles)
         
+        pageTitleView.delegate = self
         return pageTitleView
     }()
     
+    fileprivate lazy var pageView: ZPPageView = {[weak self] in
+        // 1.确定frame
+        let pageViewH = ZPScreenH - kNavBar - kTitleViewH - ktabBar
+        let pageViewFrame = CGRect(x: 0, y: kNavBar + kTitleViewH, width: ZPScreenW, height: pageViewH)
+        
+        // 2.确定子控制器
+        var childVCs = [UIViewController]()
+        
+        for _ in 0...3 {
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor.random
+            childVCs.append(vc)
+        }
+        let pageV = ZPPageView(frame: pageViewFrame, childVCs: childVCs, parentVC: self)
+        pageV.delegate = self
+        return pageV
+    }()
     
+    // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
-        
+        // 设置UI界面
         setupUI()
-        
-        view.addSubview(pageTitleView)
-
     }
 }
 
@@ -36,8 +54,12 @@ extension ZPHomeViewCtrl{
     
     fileprivate func setupUI(){
         
+        edgesForExtendedLayout = UIRectEdge.all
         // 设置导航栏
         setupNavBar()
+        
+        view.addSubview(pageTitleView)
+        view.addSubview(pageView)
     }
     
     private func setupNavBar(){
@@ -57,5 +79,21 @@ extension ZPHomeViewCtrl{
     }
 }
 
+// MARK: - 遵守pageTitleViewDelegate协议
+extension ZPHomeViewCtrl: PageTitleViewDelegate {
+    
+    func pageTitleView(titleView: ZPPageTitleView, selectedIndex index: Int) {
+        
+        pageView.setCurrentIndex(index: index)
+    }
+}
 
+// MARK: - 遵守pageViewDelegate协议
+extension ZPHomeViewCtrl: PageViewDelegate {
+    
+    func pageViewDidScroll(pageView: ZPPageView, progress: CGFloat, targetIndex: Int) {
+        
+        pageTitleView.setTitleWithProgress(progress: progress, targetIndex: targetIndex)
+    }
+}
 

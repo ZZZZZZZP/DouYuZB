@@ -11,6 +11,7 @@ import UIKit
 // MARK: - 定义协议
 protocol PageTitleViewDelegate: class {
     
+    func pageTitleView(titleView: ZPPageTitleView, selectedIndex index: Int)
 }
 
 // MARK: - 定义常量
@@ -76,7 +77,6 @@ extension ZPPageTitleView {
         
         // 4.添加滚动线
         setupScrollLine()
-        
     }
     
     // 添加标题栏label
@@ -125,17 +125,59 @@ extension ZPPageTitleView{
     
     @objc fileprivate func titleLabelClick(tap: UITapGestureRecognizer){
         
-        let label = titleLabels[currentIndex]
-        label.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2)
-        
+        // 1.取出当前点击的Label
         let currentLabel = tap.view as! UILabel
-        currentIndex = currentLabel.tag
+        
+        // 2.如果重复点击,直接返回
+        if currentLabel.tag == currentIndex {return}
+        
+        // 3.获取上一个点击的Label
+        let preLabel = titleLabels[currentIndex]
+        
+        // 4.切换文字颜色
+        preLabel.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2)
         currentLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
         
+        // 5.保存最新的当前下标
+        currentIndex = currentLabel.tag
+        
+        // 6.移动滚动下划线
         UIView.animate(withDuration: 0.25) {
             self.scrollLine.x = currentLabel.x
         }
+        
+        // 7.通知代理
+        delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
     }
 }
+
+// MARK: - 对外提供的方法
+extension ZPPageTitleView {
+    
+    func setTitleWithProgress(progress: CGFloat, targetIndex: Int) {
+        
+        if targetIndex < 0||targetIndex == titles.count {return}
+        if targetIndex == currentIndex {return}
+        
+        let currentLabel = titleLabels[currentIndex]
+        let targetLabel = titleLabels[targetIndex]
+        
+        // 下滑线滚动
+        scrollLine.x = currentLabel.x + progress * scrollLine.width * CGFloat(targetIndex - currentIndex)
+        
+        // 颜色渐变
+        let colorD = (kSelectColor.0 - kNormalColor.0, kSelectColor.1 - kNormalColor.1, kSelectColor.2 - kNormalColor.2)
+        
+        currentLabel.textColor = UIColor(r: kSelectColor.0 - colorD.0 * progress, g: kSelectColor.1 - colorD.1 * progress, b: kSelectColor.2 - colorD.2 * progress)
+        
+        targetLabel.textColor = UIColor(r: kNormalColor.0 + colorD.0 * progress, g: kNormalColor.1 + colorD.1 * progress, b: kNormalColor.2 + colorD.2 * progress)
+        
+        // 记录最新index
+        if progress == 1 {
+            currentIndex = targetIndex
+        }
+    }
+}
+
 
 

@@ -19,6 +19,7 @@
 		6EC7439C1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7439B1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift */; };
 		6EC7439E1D9FFF84006501D6 /* ZPCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7439D1D9FFF84006501D6 /* ZPCommon.swift */; };
 		6EC743A11DA0009C006501D6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC743A01DA0009C006501D6 /* UIView.swift */; };
+		6EC916FB1DA6A8D900F696A5 /* ZPPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC916FA1DA6A8D900F696A5 /* ZPPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		6EC7439B1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPMainTabBarCtrl.swift; sourceTree = "<group>"; };
 		6EC7439D1D9FFF84006501D6 /* ZPCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPCommon.swift; sourceTree = "<group>"; };
 		6EC743A01DA0009C006501D6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		6EC916FA1DA6A8D900F696A5 /* ZPPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				6E2A0D891DA3FA8A00083099 /* ZPPageTitleView.swift */,
+				6EC916FA1DA6A8D900F696A5 /* ZPPageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				6E8EA6521DA38E6400FA523C /* ZPProfileViewCtrl.swift in Sources */,
 				6E8FF3E51D9FBD3500AA96EB /* AppDelegate.swift in Sources */,
 				6EC7439C1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift in Sources */,
+				6EC916FB1DA6A8D900F696A5 /* ZPPageView.swift in Sources */,
 				6E2A0D881DA3F54000083099 /* UIColor.swift in Sources */,
 				6E2A0D8A1DA3FA8A00083099 /* ZPPageTitleView.swift in Sources */,
 			);
