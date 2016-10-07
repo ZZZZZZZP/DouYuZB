@@ -83,7 +83,6 @@ extension ZPHomeViewCtrl{
 extension ZPHomeViewCtrl: PageTitleViewDelegate {
     
     func pageTitleView(titleView: ZPPageTitleView, selectedIndex index: Int) {
-        
         pageView.setCurrentIndex(index: index)
     }
 }
@@ -91,9 +90,9 @@ extension ZPHomeViewCtrl: PageTitleViewDelegate {
 // MARK: - 遵守pageViewDelegate协议
 extension ZPHomeViewCtrl: PageViewDelegate {
     
-    func pageViewDidScroll(pageView: ZPPageView, progress: CGFloat, targetIndex: Int) {
+    func pageViewDidScroll(pageView: ZPPageView, progress: CGFloat, leftIndex: Int, rightIndex: Int) {
         
-        pageTitleView.setTitleWithProgress(progress: progress, targetIndex: targetIndex)
+        pageTitleView.setTitleWithProgress(progress: progress, leftIndex: leftIndex, rightIndex: rightIndex)
     }
 }
 

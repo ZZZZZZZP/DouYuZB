@@ -154,27 +154,24 @@ extension ZPPageTitleView{
 // MARK: - 对外提供的方法
 extension ZPPageTitleView {
     
-    func setTitleWithProgress(progress: CGFloat, targetIndex: Int) {
+    func setTitleWithProgress(progress: CGFloat, leftIndex: Int, rightIndex: Int) {
         
-        if targetIndex < 0||targetIndex == titles.count {return}
-        if targetIndex == currentIndex {return}
-        
-        let currentLabel = titleLabels[currentIndex]
-        let targetLabel = titleLabels[targetIndex]
+        let leftLabel = titleLabels[leftIndex]
+        let rightLabel = titleLabels[rightIndex]
         
         // 下滑线滚动
-        scrollLine.x = currentLabel.x + progress * scrollLine.width * CGFloat(targetIndex - currentIndex)
+        scrollLine.x = leftLabel.x + progress * scrollLine.width
         
         // 颜色渐变
         let colorD = (kSelectColor.0 - kNormalColor.0, kSelectColor.1 - kNormalColor.1, kSelectColor.2 - kNormalColor.2)
         
-        currentLabel.textColor = UIColor(r: kSelectColor.0 - colorD.0 * progress, g: kSelectColor.1 - colorD.1 * progress, b: kSelectColor.2 - colorD.2 * progress)
+        leftLabel.textColor = UIColor(r: kSelectColor.0 - colorD.0 * progress, g: kSelectColor.1 - colorD.1 * progress, b: kSelectColor.2 - colorD.2 * progress)
         
-        targetLabel.textColor = UIColor(r: kNormalColor.0 + colorD.0 * progress, g: kNormalColor.1 + colorD.1 * progress, b: kNormalColor.2 + colorD.2 * progress)
+        rightLabel.textColor = UIColor(r: kNormalColor.0 + colorD.0 * progress, g: kNormalColor.1 + colorD.1 * progress, b: kNormalColor.2 + colorD.2 * progress)
         
         // 记录最新index
-        if progress == 1 {
-            currentIndex = targetIndex
+        if progress == 0 {
+            currentIndex = Int(scrollLine.x / scrollLine.width)
         }
     }
 }
