@@ -33,6 +33,7 @@ class ZPPageView: UIView {
         
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.scrollsToTop = false
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self

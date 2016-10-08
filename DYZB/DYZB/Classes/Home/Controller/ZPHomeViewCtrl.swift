@@ -28,8 +28,9 @@ class ZPHomeViewCtrl: UIViewController {
         
         // 2.确定子控制器
         var childVCs = [UIViewController]()
+        childVCs.append(ZPRecommendVC())
         
-        for _ in 0...3 {
+        for _ in 0..<3 {
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor.random
             childVCs.append(vc)

@@ -10,12 +10,13 @@
 		6E2A0D861DA3D66F00083099 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2A0D851DA3D66F00083099 /* UIBarButtonItem.swift */; };
 		6E2A0D881DA3F54000083099 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2A0D871DA3F54000083099 /* UIColor.swift */; };
 		6E2A0D8A1DA3FA8A00083099 /* ZPPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2A0D891DA3FA8A00083099 /* ZPPageTitleView.swift */; };
-		6E8EA64C1DA38E0600FA523C /* ZPHomeViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8EA64B1DA38E0600FA523C /* ZPHomeViewCtrl.swift */; };
 		6E8EA64E1DA38E2B00FA523C /* ZPLiveViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8EA64D1DA38E2B00FA523C /* ZPLiveViewCtrl.swift */; };
 		6E8EA6501DA38E4C00FA523C /* ZPFollowViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8EA64F1DA38E4C00FA523C /* ZPFollowViewCtrl.swift */; };
 		6E8EA6521DA38E6400FA523C /* ZPProfileViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8EA6511DA38E6400FA523C /* ZPProfileViewCtrl.swift */; };
 		6E8FF3E51D9FBD3500AA96EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8FF3E41D9FBD3500AA96EB /* AppDelegate.swift */; };
 		6E8FF3EC1D9FBD3500AA96EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E8FF3EB1D9FBD3500AA96EB /* Assets.xcassets */; };
+		6EA917681DA912EC0052D93E /* ZPRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA917671DA912EC0052D93E /* ZPRecommendVC.swift */; };
+		6EA9176A1DA913B30052D93E /* ZPHomeViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA917691DA913B30052D93E /* ZPHomeViewCtrl.swift */; };
 		6EC7439C1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7439B1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift */; };
 		6EC7439E1D9FFF84006501D6 /* ZPCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7439D1D9FFF84006501D6 /* ZPCommon.swift */; };
 		6EC743A11DA0009C006501D6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC743A01DA0009C006501D6 /* UIView.swift */; };
@@ -26,7 +27,6 @@
 		6E2A0D851DA3D66F00083099 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		6E2A0D871DA3F54000083099 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		6E2A0D891DA3FA8A00083099 /* ZPPageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPPageTitleView.swift; sourceTree = "<group>"; };
-		6E8EA64B1DA38E0600FA523C /* ZPHomeViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPHomeViewCtrl.swift; sourceTree = "<group>"; };
 		6E8EA64D1DA38E2B00FA523C /* ZPLiveViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPLiveViewCtrl.swift; sourceTree = "<group>"; };
 		6E8EA64F1DA38E4C00FA523C /* ZPFollowViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPFollowViewCtrl.swift; sourceTree = "<group>"; };
 		6E8EA6511DA38E6400FA523C /* ZPProfileViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPProfileViewCtrl.swift; sourceTree = "<group>"; };
@@ -34,6 +34,8 @@
 		6E8FF3E41D9FBD3500AA96EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E8FF3EB1D9FBD3500AA96EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E8FF3F01D9FBD3500AA96EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EA917671DA912EC0052D93E /* ZPRecommendVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPRecommendVC.swift; sourceTree = "<group>"; };
+		6EA917691DA913B30052D93E /* ZPHomeViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPHomeViewCtrl.swift; sourceTree = "<group>"; };
 		6EC7439B1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPMainTabBarCtrl.swift; sourceTree = "<group>"; };
 		6EC7439D1D9FFF84006501D6 /* ZPCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPCommon.swift; sourceTree = "<group>"; };
 		6EC743A01DA0009C006501D6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,15 @@
 				6E8FF3F01D9FBD3500AA96EB /* Info.plist */,
 			);
 			path = DYZB;
+			sourceTree = "<group>";
+		};
+		6EA917661DA912EC0052D93E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6EA917691DA913B30052D93E /* ZPHomeViewCtrl.swift */,
+				6EA917671DA912EC0052D93E /* ZPRecommendVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		6EC743831D9FF917006501D6 /* Classes */ = {
@@ -128,17 +139,9 @@
 			children = (
 				6EC7438A1D9FF917006501D6 /* Model */,
 				6EC7438B1D9FF917006501D6 /* View */,
-				6EC743891D9FF917006501D6 /* Controller */,
+				6EA917661DA912EC0052D93E /* Controller */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		6EC743891D9FF917006501D6 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				6E8EA64B1DA38E0600FA523C /* ZPHomeViewCtrl.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		6EC7438A1D9FF917006501D6 /* Model */ = {
@@ -343,14 +346,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E8EA64C1DA38E0600FA523C /* ZPHomeViewCtrl.swift in Sources */,
 				6E2A0D861DA3D66F00083099 /* UIBarButtonItem.swift in Sources */,
+				6EA9176A1DA913B30052D93E /* ZPHomeViewCtrl.swift in Sources */,
 				6EC743A11DA0009C006501D6 /* UIView.swift in Sources */,
 				6EC7439E1D9FFF84006501D6 /* ZPCommon.swift in Sources */,
 				6E8EA64E1DA38E2B00FA523C /* ZPLiveViewCtrl.swift in Sources */,
 				6E8EA6501DA38E4C00FA523C /* ZPFollowViewCtrl.swift in Sources */,
 				6E8EA6521DA38E6400FA523C /* ZPProfileViewCtrl.swift in Sources */,
 				6E8FF3E51D9FBD3500AA96EB /* AppDelegate.swift in Sources */,
+				6EA917681DA912EC0052D93E /* ZPRecommendVC.swift in Sources */,
 				6EC7439C1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift in Sources */,
 				6EC916FB1DA6A8D900F696A5 /* ZPPageView.swift in Sources */,
 				6E2A0D881DA3F54000083099 /* UIColor.swift in Sources */,
