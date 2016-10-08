@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import AFNetworking
 
 private let kMargin: CGFloat = 10
 private let kItemW = (ZPScreenW - 3 * kMargin) / 2
 private let kItemH = kItemW * 9 / 16
+private let kPrettyItemH = kItemW
+private let kHeaderViewH : CGFloat = 50
+
+private let kCycleViewH = ZPScreenW * 3 / 8
+private let kGameViewH : CGFloat = 90
 
 private let kNormalCellID = "kNormalCellID"
 
@@ -28,7 +34,7 @@ class ZPRecommendVC: UIViewController {
         let collectionView = UICollectionView(frame: self!.view.bounds, collectionViewLayout: layout)
         
         collectionView.dataSource = self
-        //collectionView.delegate = self
+        collectionView.delegate = self
         
         // 注册cell
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kNormalCellID)
@@ -36,6 +42,23 @@ class ZPRecommendVC: UIViewController {
         return collectionView
     }()
     
+    // 图片轮播View
+    fileprivate lazy var cycleView: ZPCycleView = {
+       
+        let cycleFrame = CGRect(x: 0, y: -(kCycleViewH + kGameViewH), width: ZPScreenW, height: kCycleViewH)
+        
+        return ZPCycleView(frame: cycleFrame)
+    }()
+    
+    // 游戏列表View
+    fileprivate lazy var gameView: ZPGameView = {
+        
+        let gameFrame = CGRect(x: 0, y: -kGameViewH, width: ZPScreenW, height: kGameViewH)
+        
+        return ZPGameView(frame: gameFrame)
+    }()
+    
+    // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,6 +72,11 @@ extension ZPRecommendVC {
     func setupUI() {
         
         view.addSubview(collectionView)
+        collectionView.addSubview(cycleView)
+        collectionView.addSubview(gameView)
+        
+        // 设置内边距
+        collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH + kGameViewH, 0, 0, 0)
     }
 }
 
@@ -73,6 +101,19 @@ extension ZPRecommendVC: UICollectionViewDataSource {
         
         cell.backgroundColor = UIColor.random
         return cell
+    }
+}
+
+// MARK: - 代理方法
+extension ZPRecommendVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if indexPath.section == 1 {
+            return CGSize(width: kItemW, height: kPrettyItemH)
+        }
+        
+        return CGSize(width: kItemW, height: kItemH)
     }
 }
 
