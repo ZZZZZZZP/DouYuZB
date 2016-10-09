@@ -11,14 +11,16 @@ import AFNetworking
 
 private let kMargin: CGFloat = 10
 private let kItemW = (ZPScreenW - 3 * kMargin) / 2
-private let kItemH = kItemW * 9 / 16
-private let kPrettyItemH = kItemW
+private let kItemH = kItemW * 3 / 4
+private let kPrettyItemH = kItemW * 5 / 4
 private let kHeaderViewH : CGFloat = 50
 
 private let kCycleViewH = ZPScreenW * 3 / 8
 private let kGameViewH : CGFloat = 90
 
 private let kNormalCellID = "kNormalCellID"
+private let kPrettyCellID = "kPrettyCellID"
+private let kHeaderViewID = "kHeaderViewID"
 
 class ZPRecommendVC: UIViewController {
 
@@ -31,13 +33,23 @@ class ZPRecommendVC: UIViewController {
         layout.minimumLineSpacing = 0
         layout.sectionInset = UIEdgeInsetsMake(0, kMargin, 0, kMargin)
         
+        // 组头部分
+        layout.headerReferenceSize = CGSize(width: ZPScreenW, height: kHeaderViewH)
+        
         let collectionView = UICollectionView(frame: self!.view.bounds, collectionViewLayout: layout)
+        collectionView.backgroundColor = UIColor.white
         
         collectionView.dataSource = self
         collectionView.delegate = self
         
         // 注册cell
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kNormalCellID)
+        collectionView.register(UINib(nibName: "ZPNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
+        
+        // 注册颜值cell
+        collectionView.register(UINib(nibName: "ZPPrettyCell", bundle: nil), forCellWithReuseIdentifier: kPrettyCellID)
+        
+        // 注册头部View
+        collectionView.register(UINib(nibName: "ZPHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
         
         return collectionView
     }()
@@ -63,6 +75,7 @@ class ZPRecommendVC: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        
     }
 }
 
@@ -77,6 +90,7 @@ extension ZPRecommendVC {
         
         // 设置内边距
         collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH + kGameViewH, 0, 0, 0)
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 }
 
@@ -97,11 +111,26 @@ extension ZPRecommendVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+        var cell: UICollectionViewCell!
         
-        cell.backgroundColor = UIColor.random
+        if indexPath.section == 1 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath)
+        }
+        else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! ZPNormalCell
+        }
+        
         return cell
     }
+    
+    // 每一组headerView
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! ZPHeaderView
+        
+        return headView
+    }
+    
 }
 
 // MARK: - 代理方法
