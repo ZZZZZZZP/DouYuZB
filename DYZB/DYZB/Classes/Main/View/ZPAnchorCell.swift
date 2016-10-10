@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ZPAnchorCell: UICollectionViewCell {
     
@@ -22,7 +23,23 @@ class ZPAnchorCell: UICollectionViewCell {
             // 验证是否有值
             guard let anchor = anchor else {return}
             
+            var onlineStr = ""
+            if anchor.online >= 10000 {
+                
+                onlineStr = String(format: "%.1f万", arguments: [CGFloat(anchor.online) / 10000.0])
+            }
+            else {
+                onlineStr = "\(anchor.online)"
+            }
             
+            onlineBtn.setTitle(onlineStr, for: .normal)
+            
+            nickNameL.text = anchor.nickname
+            
+            if let url = URL(string: anchor.vertical_src) {
+                
+                iconImgV.sd_setImage(with: url)
+            }
         }
     }
 }

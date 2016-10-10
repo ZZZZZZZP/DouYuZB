@@ -33,5 +33,9 @@ class ZPAnchorGroup: NSObject {
         setValuesForKeys(dict)
     }
     
+    override init() {
+        
+    }
+    
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}
 }

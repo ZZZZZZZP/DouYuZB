@@ -12,6 +12,14 @@ class ZPNormalCell: ZPAnchorCell {
 
     @IBOutlet weak var roomNameL: UILabel!
     
-
+    override var anchor: ZPAnchorModel? {
+        didSet{
+            // 将属性传给父类
+            super.anchor = anchor
+            
+            // 设置房间名称
+            roomNameL.text = anchor?.room_name
+        }
+    }
     
 }
