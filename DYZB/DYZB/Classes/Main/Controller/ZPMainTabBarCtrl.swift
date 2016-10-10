@@ -14,23 +14,23 @@ class ZPMainTabBarCtrl: UITabBarController {
         super.viewDidLoad()
         
         // 添加子控制器
-        addChildVC(type: ZPHomeViewCtrl.self)
-        addChildVC(type: ZPLiveViewCtrl.self)
-        addChildVC(type: ZPFollowViewCtrl.self)
-        addChildVC(type: ZPProfileViewCtrl.self)
+        addChildVC(ZPHomeViewCtrl.self)
+        addChildVC(ZPLiveViewCtrl.self)
+        addChildVC(ZPFollowViewCtrl.self)
+        addChildVC(ZPProfileViewCtrl.self)
         
         // 设置TabBar
         setupTabBarItem()
     }
     
-    private func addChildVC(type: AnyClass){
+    fileprivate func addChildVC(_ type: AnyClass){
         
         let vc = type.alloc() as! UIViewController
         let nav = UINavigationController(rootViewController: vc)
         addChildViewController(nav)
     }
     
-    private func setupTabBarItem(){
+    fileprivate func setupTabBarItem(){
         
         let titles = ["首页","直播","关注","我的"]
         let images = ["btn_home_normal",

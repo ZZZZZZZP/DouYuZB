@@ -63,7 +63,7 @@ extension ZPHomeViewCtrl{
         view.addSubview(pageView)
     }
     
-    private func setupNavBar(){
+    fileprivate func setupNavBar(){
         
         // 设置左侧的Item
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "logo")
@@ -83,17 +83,17 @@ extension ZPHomeViewCtrl{
 // MARK: - 遵守pageTitleViewDelegate协议
 extension ZPHomeViewCtrl: PageTitleViewDelegate {
     
-    func pageTitleView(titleView: ZPPageTitleView, selectedIndex index: Int) {
-        pageView.setCurrentIndex(index: index)
+    func pageTitleView(_ titleView: ZPPageTitleView, selectedIndex index: Int) {
+        pageView.setCurrentIndex(index)
     }
 }
 
 // MARK: - 遵守pageViewDelegate协议
 extension ZPHomeViewCtrl: PageViewDelegate {
     
-    func pageViewDidScroll(pageView: ZPPageView, progress: CGFloat, leftIndex: Int, rightIndex: Int) {
+    func pageViewDidScroll(_ pageView: ZPPageView, progress: CGFloat, leftIndex: Int, rightIndex: Int) {
         
-        pageTitleView.setTitleWithProgress(progress: progress, leftIndex: leftIndex, rightIndex: rightIndex)
+        pageTitleView.setTitleWithProgress(progress, leftIndex: leftIndex, rightIndex: rightIndex)
     }
 }
 

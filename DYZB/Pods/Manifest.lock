@@ -14,18 +14,24 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Alamofire (4.0.1)
+  - Kingfisher (3.1.1)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - Alamofire (~> 4.0.1)
+  - Kingfisher (~> 3.1.1)
   - SDWebImage (~> 3.8.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Kingfisher: 12b755ae697cc9f0fd3e550db8417fa1233e09ab
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: c3ebb68dbdf15fa7374ce91e2ca524791d2143b9
+PODFILE CHECKSUM: f90153b34b9941a87ef05c3dfa05407eef2e0475
 
 COCOAPODS: 1.0.1

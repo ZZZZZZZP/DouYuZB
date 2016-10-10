@@ -12,7 +12,7 @@ private let cellID = "collectionViewCell"
 
 protocol PageViewDelegate: class {
     
-    func pageViewDidScroll(pageView: ZPPageView, progress: CGFloat, leftIndex: Int, rightIndex: Int)
+    func pageViewDidScroll(_ pageView: ZPPageView, progress: CGFloat, leftIndex: Int, rightIndex: Int)
 }
 
 class ZPPageView: UIView {
@@ -121,14 +121,14 @@ extension ZPPageView: UICollectionViewDelegate {
         let progress = offsetX / scrollView.width - CGFloat(leftIndex)
         
         // 通知代理
-        delegate?.pageViewDidScroll(pageView: self, progress: progress, leftIndex: leftIndex, rightIndex: rightIndex)
+        delegate?.pageViewDidScroll(self, progress: progress, leftIndex: leftIndex, rightIndex: rightIndex)
     }
 }
 
 // MARK: - 对外提供的方法
 extension ZPPageView {
     
-    func setCurrentIndex(index: Int) {
+    func setCurrentIndex(_ index: Int) {
         
         isTitleClick = true
         collectionView.contentOffset.x = CGFloat(index) * collectionView.width

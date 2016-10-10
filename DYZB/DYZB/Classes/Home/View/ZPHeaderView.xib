@@ -49,6 +49,10 @@
                 <constraint firstItem="AsW-8X-ObH" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="pcl-KB-ora"/>
                 <constraint firstItem="ClG-NK-lkf" firstAttribute="top" secondItem="AsW-8X-ObH" secondAttribute="bottom" id="wQ2-gs-jMj"/>
             </constraints>
+            <connections>
+                <outlet property="iconImgV" destination="Goa-u1-PKW" id="dVS-Eh-QJX"/>
+                <outlet property="nameLabel" destination="FJJ-6T-ai2" id="acr-U9-25o"/>
+            </connections>
             <point key="canvasLocation" x="183" y="-14"/>
         </collectionReusableView>
     </objects>

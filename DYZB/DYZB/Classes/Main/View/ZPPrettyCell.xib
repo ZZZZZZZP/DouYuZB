@@ -60,6 +60,12 @@
                 <constraint firstItem="Kt4-4j-fL4" firstAttribute="top" secondItem="eal-lv-GJw" secondAttribute="bottom" constant="10" id="uju-Bq-Obk"/>
             </constraints>
             <size key="customSize" width="255" height="298"/>
+            <connections>
+                <outlet property="cityBtn" destination="lEe-X0-Yyd" id="3OB-oR-YnK"/>
+                <outlet property="iconImgV" destination="eal-lv-GJw" id="n6Y-lx-iYF"/>
+                <outlet property="nickNameL" destination="Kt4-4j-fL4" id="B6G-RI-6ub"/>
+                <outlet property="onlineBtn" destination="Sw1-vE-xIs" id="F8M-kR-Hpb"/>
+            </connections>
             <point key="canvasLocation" x="15.5" y="-18"/>
         </collectionViewCell>
     </objects>

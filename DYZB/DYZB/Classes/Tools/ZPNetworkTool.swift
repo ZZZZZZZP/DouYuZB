@@ -8,10 +8,23 @@
 
 import UIKit
 import AFNetworking
+import Alamofire
+
+enum MethodType {
+    case get
+    case post
+}
 
 class ZPNetworkTool {
 
-    class func getRequestData(URLString: String, params: Any?,  finishedBack: @escaping (_ responseObj: Any?, _ error: Error?)->()) {
+    // Alamofire
+    class func getData() {
+        
+        
+    }
+    
+    // AFNetworking
+    class func getRequestData(_ URLString: String, params: Any?,  finishedBack: @escaping (_ responseObj: Any?, _ error: Error?)->()) {
         
         let manager = AFHTTPSessionManager()
         

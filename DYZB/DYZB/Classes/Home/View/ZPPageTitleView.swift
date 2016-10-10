@@ -11,7 +11,7 @@ import UIKit
 // MARK: - 定义协议
 protocol PageTitleViewDelegate: class {
     
-    func pageTitleView(titleView: ZPPageTitleView, selectedIndex index: Int)
+    func pageTitleView(_ titleView: ZPPageTitleView, selectedIndex index: Int)
 }
 
 // MARK: - 定义常量
@@ -80,7 +80,7 @@ extension ZPPageTitleView {
     }
     
     // 添加标题栏label
-    private func setupTitleLabels(){
+    fileprivate func setupTitleLabels(){
         
         let labelW = scrollView.width / CGFloat(titles.count)
         let labelH = scrollView.height - kScrollLabelH
@@ -105,11 +105,11 @@ extension ZPPageTitleView {
             
             // 4.监听Label点击
             label.isUserInteractionEnabled = true
-            label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(titleLabelClick(tap:))))
+            label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(titleLabelClick(_:))))
         }
     }
     
-    private func setupScrollLine(){
+    fileprivate func setupScrollLine(){
         // 1.取出第一个Label
         guard let currentLabel = titleLabels.first else {return}
         currentLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
@@ -123,7 +123,7 @@ extension ZPPageTitleView {
 // MARK: - 监听Label点击
 extension ZPPageTitleView{
     
-    @objc fileprivate func titleLabelClick(tap: UITapGestureRecognizer){
+    @objc fileprivate func titleLabelClick(_ tap: UITapGestureRecognizer){
         
         // 1.取出当前点击的Label
         let currentLabel = tap.view as! UILabel
@@ -147,14 +147,14 @@ extension ZPPageTitleView{
         }
         
         // 7.通知代理
-        delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
+        delegate?.pageTitleView(self, selectedIndex: currentIndex)
     }
 }
 
 // MARK: - 对外提供的方法
 extension ZPPageTitleView {
     
-    func setTitleWithProgress(progress: CGFloat, leftIndex: Int, rightIndex: Int) {
+    func setTitleWithProgress(_ progress: CGFloat, leftIndex: Int, rightIndex: Int) {
         
         let leftLabel = titleLabels[leftIndex]
         let rightLabel = titleLabels[rightIndex]

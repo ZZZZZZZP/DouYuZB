@@ -10,10 +10,16 @@ import UIKit
 
 class ZPHeaderView: UICollectionReusableView {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        
-    }
+    // MARK: - 控件属性
+    @IBOutlet weak var iconImgV: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
+    // MARK: - 模型属性
+    var group: ZPAnchorGroup? {
+        
+        didSet{
+            nameLabel.text = group?.tag_name
+            iconImgV.image = UIImage(named: group?.icon_name ?? "home_header_normal")
+        }
+    }
 }

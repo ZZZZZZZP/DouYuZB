@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ZPNormalCell: UICollectionViewCell {
+class ZPNormalCell: ZPAnchorCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak var roomNameL: UILabel!
+    
 
+    
 }

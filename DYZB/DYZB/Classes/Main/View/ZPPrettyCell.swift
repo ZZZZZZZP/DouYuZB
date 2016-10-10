@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ZPPrettyCell: UICollectionViewCell {
+class ZPPrettyCell: ZPAnchorCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak var cityBtn: UIButton!
+    
+
 
 }

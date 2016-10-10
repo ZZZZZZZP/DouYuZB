@@ -25,6 +25,8 @@ private let kHeaderViewID = "kHeaderViewID"
 class ZPRecommendVC: UIViewController {
 
     // MARK: - 懒加载属性
+    fileprivate lazy var recommendVM: ZPRecommendVM = ZPRecommendVM()
+    
     fileprivate lazy var collectionView: UICollectionView = {[weak self] in
         
         let layout = UICollectionViewFlowLayout()
@@ -74,8 +76,11 @@ class ZPRecommendVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // 设置UI界面
         setupUI()
         
+        // 请求数据
+        loadData()
     }
 }
 
@@ -94,11 +99,24 @@ extension ZPRecommendVC {
     }
 }
 
+// MARK: - 请求数据
+extension ZPRecommendVC {
+    
+    fileprivate func loadData(){
+        
+        // 推荐数据
+        recommendVM.requestData {
+            self.collectionView.reloadData()
+            
+        }
+    }
+}
+
 // MARK: - 数据源方法
 extension ZPRecommendVC: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 10
+        return recommendVM.anchorGroups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -127,6 +145,8 @@ extension ZPRecommendVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! ZPHeaderView
+        
+        headView.group = recommendVM.anchorGroups[indexPath.section]
         
         return headView
     }
