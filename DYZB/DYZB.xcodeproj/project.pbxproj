@@ -36,6 +36,8 @@
 		6EC7439E1D9FFF84006501D6 /* ZPCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7439D1D9FFF84006501D6 /* ZPCommon.swift */; };
 		6EC743A11DA0009C006501D6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC743A01DA0009C006501D6 /* UIView.swift */; };
 		6EC916FB1DA6A8D900F696A5 /* ZPPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC916FA1DA6A8D900F696A5 /* ZPPageView.swift */; };
+		6EFD5E9D1DACFC7D002D7DA7 /* ZPCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFD5E9C1DACFC7D002D7DA7 /* ZPCycleCell.swift */; };
+		6EFD5E9F1DACFD0B002D7DA7 /* ZPCycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFD5E9E1DACFD0B002D7DA7 /* ZPCycleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		6EC7439D1D9FFF84006501D6 /* ZPCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPCommon.swift; sourceTree = "<group>"; };
 		6EC743A01DA0009C006501D6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		6EC916FA1DA6A8D900F696A5 /* ZPPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPPageView.swift; sourceTree = "<group>"; };
+		6EFD5E9C1DACFC7D002D7DA7 /* ZPCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPCycleCell.swift; sourceTree = "<group>"; };
+		6EFD5E9E1DACFD0B002D7DA7 /* ZPCycleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPCycleModel.swift; sourceTree = "<group>"; };
 		78E4CECC3AA5711A8E699277 /* Pods-DYZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.release.xcconfig"; sourceTree = "<group>"; };
 		F07317E41867F0E8DA04F143 /* Pods-DYZB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +212,7 @@
 		6EC7438A1D9FF917006501D6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6EFD5E9E1DACFD0B002D7DA7 /* ZPCycleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				6E2A0D891DA3FA8A00083099 /* ZPPageTitleView.swift */,
 				6EC916FA1DA6A8D900F696A5 /* ZPPageView.swift */,
 				6E8AF07E1DA93F6F00CE6C78 /* ZPCycleView.swift */,
+				6EFD5E9C1DACFC7D002D7DA7 /* ZPCycleCell.swift */,
 				6E8AF0801DA9459900CE6C78 /* ZPGameView.swift */,
 				6E0A801D1DAA5B9900F97354 /* ZPHeaderView.swift */,
 				6E0A801E1DAA5B9900F97354 /* ZPHeaderView.xib */,
@@ -475,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EFD5E9F1DACFD0B002D7DA7 /* ZPCycleModel.swift in Sources */,
 				6E2A0D861DA3D66F00083099 /* UIBarButtonItem.swift in Sources */,
 				6E0A801F1DAA5B9900F97354 /* ZPHeaderView.swift in Sources */,
 				6E0A80171DAA5B1A00F97354 /* ZPNormalCell.swift in Sources */,
@@ -484,6 +491,7 @@
 				6E8AF07F1DA93F6F00CE6C78 /* ZPCycleView.swift in Sources */,
 				6EC7439E1D9FFF84006501D6 /* ZPCommon.swift in Sources */,
 				6E8EA64E1DA38E2B00FA523C /* ZPLiveViewCtrl.swift in Sources */,
+				6EFD5E9D1DACFC7D002D7DA7 /* ZPCycleCell.swift in Sources */,
 				6E1F0F6E1DABA4740036F83C /* ZPAnchorModel.swift in Sources */,
 				6E1F0F771DABD0840036F83C /* ZPAnchorCell.swift in Sources */,
 				6E8EA6501DA38E4C00FA523C /* ZPFollowViewCtrl.swift in Sources */,

@@ -104,6 +104,11 @@ extension ZPRecommendVC {
     
     fileprivate func loadData(){
         
+        // 轮播数据
+        recommendVM.requestCycleData {
+            self.cycleView.cycleModels = self.recommendVM.cycleModels
+        }
+        
         // 推荐数据
         recommendVM.requestData {
             self.collectionView.reloadData()

@@ -13,7 +13,7 @@ class ZPRecommendVM {
     // MARK: - 懒加载属性
     lazy var anchorGroups: [ZPAnchorGroup] = [ZPAnchorGroup]()
     // 颜值组
-    lazy var prettyGroup: ZPAnchorGroup = {
+    fileprivate lazy var prettyGroup: ZPAnchorGroup = {
         let group = ZPAnchorGroup()
         group.tag_name = "颜值"
         group.icon_name = "home_header_phone"
@@ -21,19 +21,22 @@ class ZPRecommendVM {
         return group
     }()
     // 最热组
-    lazy var hotGroup: ZPAnchorGroup = {
+    fileprivate lazy var hotGroup: ZPAnchorGroup = {
         let group = ZPAnchorGroup()
         group.tag_name = "热门"
         group.icon_name = "home_header_hot"
         
         return group
     }()
+    // 轮播数据
+    lazy var cycleModels: [ZPCycleModel] = [ZPCycleModel]()
+    
 }
 
 // MARK: - 发送网络请求
 extension ZPRecommendVM {
     
-    // 请求推荐数据
+    // MARK: - 请求推荐数据
     func requestData(_ finishedBack: @escaping ()->()) {
         
         let params = ["limit": "4", "offset": "0", "time": Date.currentTime()]
@@ -92,6 +95,25 @@ extension ZPRecommendVM {
             
             self.anchorGroups.insert(self.prettyGroup, at: 0)
             self.anchorGroups.insert(self.hotGroup, at: 0)
+            finishedBack()
+        }
+    }
+    
+    // MARK: - 请求轮播数据
+    func requestCycleData(finishedBack: @escaping ()->()) {
+        
+        ZPNetworkTool.getRequestData("http://www.douyutv.com/api/v1/slide/6", params: ["version": "2.300"]) { (result, error) in
+            
+            if error != nil {return}
+            guard let resultDict = result as? [String: NSObject] else{return}
+            
+            guard let dataArr = resultDict["data"] as? [[String: NSObject]] else {return}
+            
+            for dict in dataArr {
+                self.cycleModels.append(ZPCycleModel(dict: dict))
+            }
+            
+            // 完成回调
             finishedBack()
         }
     }
