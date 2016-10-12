@@ -49,6 +49,7 @@ extension ZPGameCell {
         contentView.addSubview(imgView)
         contentView.addSubview(nameLabel)
         nameLabel.font = UIFont.systemFont(ofSize: 12)
+        nameLabel.textAlignment = .center
     }
     
     // 布局子控件
@@ -62,9 +63,7 @@ extension ZPGameCell {
         imgView.centerX = contentView.width * 0.5
         
         // 文字
-        nameLabel.sizeToFit()
-        nameLabel.y = contentView.height - 25
-        nameLabel.centerX = contentView.width * 0.5
+        nameLabel.frame = CGRect(x: 0, y: contentView.height - 30, width: contentView.width, height: 15)
     }
 }
 
