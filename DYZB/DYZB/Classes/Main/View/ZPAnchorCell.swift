@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SDWebImage
 
 class ZPAnchorCell: UICollectionViewCell {
     
@@ -36,10 +35,8 @@ class ZPAnchorCell: UICollectionViewCell {
             
             nickNameL.text = anchor.nickname
             
-            if let url = URL(string: anchor.vertical_src) {
-                
-                iconImgV.sd_setImage(with: url)
-            }
+            let url = URL(string: anchor.vertical_src)
+            iconImgV.kf.setImage(with: url)
         }
     }
 }

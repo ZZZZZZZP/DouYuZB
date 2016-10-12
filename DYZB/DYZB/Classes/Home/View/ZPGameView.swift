@@ -8,11 +8,54 @@
 
 import UIKit
 
+private let kGameCellID = "kGameCellID"
+private let kItemW: CGFloat = 80
+
 class ZPGameView: UIView {
 
+    // MARK: - 懒加载属性
+    fileprivate lazy var collectionView: UICollectionView = {[unowned self] in
+       
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: kItemW, height: self.height)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        layout.scrollDirection = .horizontal
+        
+        let colllectionV = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
+        colllectionV.backgroundColor = UIColor.white
+        colllectionV.showsHorizontalScrollIndicator = false
+        colllectionV.dataSource = self
+        
+        // 注册cell
+        colllectionV.register(ZPGameCell.self, forCellWithReuseIdentifier: kGameCellID)
+        
+        
+        return colllectionV
+        
+    }()
+    
+    // MARK: - 模型数据
+    var groups: [ZPAnchorGroup]? {
+        
+        didSet{
+            // 移除前两组
+            groups?.removeFirst()
+            groups?.removeFirst()
+            
+            // 添加更多选择
+            let group = ZPAnchorGroup()
+            group.tag_name = "更多"
+            groups?.append(group)
+            
+            // 刷新表格
+            collectionView.reloadData()
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        // 设置UI界面
         setupUI()
     }
     
@@ -27,9 +70,28 @@ extension ZPGameView {
     
     fileprivate func setupUI() {
      
-        backgroundColor = UIColor.yellow
+        addSubview(collectionView)
     }
 }
+
+// MARK: - 数据源方法
+extension ZPGameView: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return groups?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath) as! ZPGameCell
+        
+        cell.group = groups![indexPath.item]
+        
+        return cell
+    }
+}
+
 
 
 

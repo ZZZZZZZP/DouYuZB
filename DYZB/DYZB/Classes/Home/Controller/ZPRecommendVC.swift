@@ -111,8 +111,11 @@ extension ZPRecommendVC {
         
         // 推荐数据
         recommendVM.requestData {
-            self.collectionView.reloadData()
             
+            // 传数据给gameView
+            self.gameView.groups = self.recommendVM.anchorGroups
+            // 刷新
+            self.collectionView.reloadData()
         }
     }
 }
