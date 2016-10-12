@@ -40,6 +40,10 @@ class ZPRecommendVC: UIViewController {
         
         let collectionView = UICollectionView(frame: self!.view.bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.white
+        // 设置内边距
+        collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH + kGameViewH, 0, 0, 0)
+        // 跟随父控件缩放
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -92,10 +96,6 @@ extension ZPRecommendVC {
         view.addSubview(collectionView)
         collectionView.addSubview(cycleView)
         collectionView.addSubview(gameView)
-        
-        // 设置内边距
-        collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH + kGameViewH, 0, 0, 0)
-        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 }
 
