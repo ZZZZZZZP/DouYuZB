@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZPAnchorGroup: NSObject {
+class ZPAnchorGroup: ZPGameModel {
 
     var room_list: [[String: NSObject]]? {
         
@@ -20,22 +20,12 @@ class ZPAnchorGroup: NSObject {
             }
         }
     }
-    var tag_name: String = ""
     var icon_name: String = "home_header_normal"
-    var icon_url: String = ""
     
     // 主播模型数组
     lazy var anchors: [ZPAnchorModel] = [ZPAnchorModel]()
     
-    init(dict: [String: NSObject]) {
-        super.init()
-        
-        setValuesForKeys(dict)
-    }
-    
-    override init() {
-        
-    }
-    
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {}
 }
+
+
+

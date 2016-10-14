@@ -20,7 +20,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_header_hot" translatesAutoresizingMaskIntoConstraints="NO" id="Goa-u1-PKW">
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="LKz-cf-bNO"/>
-                        <constraint firstAttribute="width" constant="18" id="Tah-Yx-I1v"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最热" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJJ-6T-ai2">
@@ -51,6 +50,7 @@
             </constraints>
             <connections>
                 <outlet property="iconImgV" destination="Goa-u1-PKW" id="dVS-Eh-QJX"/>
+                <outlet property="moreBtn" destination="ClG-NK-lkf" id="3On-sZ-XIw"/>
                 <outlet property="nameLabel" destination="FJJ-6T-ai2" id="acr-U9-25o"/>
             </connections>
             <point key="canvasLocation" x="183" y="-14"/>

@@ -36,18 +36,9 @@ class ZPGameView: UIView {
     }()
     
     // MARK: - 模型数据
-    var groups: [ZPAnchorGroup]? {
+    var groups: [ZPGameModel]? {
         
         didSet{
-            // 移除前两组
-            groups?.removeFirst()
-            groups?.removeFirst()
-            
-            // 添加更多选择
-            let group = ZPAnchorGroup()
-            group.tag_name = "更多"
-            groups?.append(group)
-            
             // 刷新表格
             collectionView.reloadData()
         }
@@ -91,8 +82,6 @@ extension ZPGameView: UICollectionViewDataSource {
         return cell
     }
 }
-
-
 
 
 

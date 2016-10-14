@@ -112,8 +112,18 @@ extension ZPRecommendVC {
         // 推荐数据
         recommendVM.requestData {
             
+            var groups = self.recommendVM.anchorGroups
+            // 移除前两组
+            groups.removeFirst()
+            groups.removeFirst()
+            
+            // 添加更多选择
+            let group = ZPAnchorGroup()
+            group.tag_name = "更多"
+            groups.append(group)
+            
             // 传数据给gameView
-            self.gameView.groups = self.recommendVM.anchorGroups
+            self.gameView.groups = groups
             // 刷新
             self.collectionView.reloadData()
         }

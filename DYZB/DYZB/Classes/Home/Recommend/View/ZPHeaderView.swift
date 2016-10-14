@@ -13,6 +13,7 @@ class ZPHeaderView: UICollectionReusableView {
     // MARK: - 控件属性
     @IBOutlet weak var iconImgV: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var moreBtn: UIButton!
     
     // MARK: - 模型属性
     var group: ZPAnchorGroup? {
@@ -23,3 +24,14 @@ class ZPHeaderView: UICollectionReusableView {
         }
     }
 }
+
+// MARK: - 从XIB加载的类方法
+extension ZPHeaderView {
+    
+    class func headerView()->ZPHeaderView {
+        
+        return Bundle.main.loadNibNamed("ZPHeaderView", owner: nil, options: nil)?.first as! ZPHeaderView
+    }
+}
+
+

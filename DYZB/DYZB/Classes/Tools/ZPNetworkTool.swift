@@ -18,9 +18,19 @@ enum MethodType {
 class ZPNetworkTool {
 
     // Alamofire
-    class func getData() {
+    class func requestData(type: MethodType, URLString: String, params: [String: Any]? = nil, finishedBack: @escaping (_ result: Any)->()) {
         
+        let method = type == .get ? HTTPMethod.get : HTTPMethod.post
         
+        Alamofire.request(URLString, method: method , parameters: params).responseJSON { (response) in
+            
+            guard let result = response.result.value else {
+                print(response.result.error)
+                return
+            }
+            
+            finishedBack(result)
+        }
     }
     
     // AFNetworking

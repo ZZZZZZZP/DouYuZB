@@ -19,6 +19,7 @@
 		6E2A0D861DA3D66F00083099 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2A0D851DA3D66F00083099 /* UIBarButtonItem.swift */; };
 		6E2A0D881DA3F54000083099 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2A0D871DA3F54000083099 /* UIColor.swift */; };
 		6E38A3E51DAE2763003C1208 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E38A3E41DAE2763003C1208 /* UIImage.swift */; };
+		6E7EB4431DAFB89600ED5547 /* ZPGameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7EB4421DAFB89600ED5547 /* ZPGameVM.swift */; };
 		6E8AF07D1DA9295800CE6C78 /* ZPNetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8AF07C1DA9295800CE6C78 /* ZPNetworkTool.swift */; };
 		6E8C05D51DAE82A3005F6316 /* ZPRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8C05D41DAE82A3005F6316 /* ZPRecommendVC.swift */; };
 		6E8C05D71DAE8305005F6316 /* ZPCycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8C05D61DAE8305005F6316 /* ZPCycleModel.swift */; };
@@ -41,6 +42,7 @@
 		6EC7439C1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7439B1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift */; };
 		6EC7439E1D9FFF84006501D6 /* ZPCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7439D1D9FFF84006501D6 /* ZPCommon.swift */; };
 		6EC743A11DA0009C006501D6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC743A01DA0009C006501D6 /* UIView.swift */; };
+		6EE808021DB0D9D400F0A9B5 /* ZPGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE808011DB0D9D400F0A9B5 /* ZPGameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,7 @@
 		6E2A0D851DA3D66F00083099 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		6E2A0D871DA3F54000083099 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		6E38A3E41DAE2763003C1208 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		6E7EB4421DAFB89600ED5547 /* ZPGameVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPGameVM.swift; sourceTree = "<group>"; };
 		6E8AF07C1DA9295800CE6C78 /* ZPNetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPNetworkTool.swift; sourceTree = "<group>"; };
 		6E8C05D41DAE82A3005F6316 /* ZPRecommendVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPRecommendVC.swift; sourceTree = "<group>"; };
 		6E8C05D61DAE8305005F6316 /* ZPCycleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPCycleModel.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		6EC7439B1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPMainTabBarCtrl.swift; sourceTree = "<group>"; };
 		6EC7439D1D9FFF84006501D6 /* ZPCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPCommon.swift; sourceTree = "<group>"; };
 		6EC743A01DA0009C006501D6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		6EE808011DB0D9D400F0A9B5 /* ZPGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPGameModel.swift; sourceTree = "<group>"; };
 		78E4CECC3AA5711A8E699277 /* Pods-DYZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.release.xcconfig"; sourceTree = "<group>"; };
 		F07317E41867F0E8DA04F143 /* Pods-DYZB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +201,7 @@
 		6E8C05D31DAE8251005F6316 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				6E7EB4421DAFB89600ED5547 /* ZPGameVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 		6EC743921D9FF917006501D6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6EE808011DB0D9D400F0A9B5 /* ZPGameModel.swift */,
 				6E1F0F6F1DABA49F0036F83C /* ZPAnchorGroup.swift */,
 				6E1F0F6D1DABA4740036F83C /* ZPAnchorModel.swift */,
 			);
@@ -550,6 +556,7 @@
 				6E8C05D51DAE82A3005F6316 /* ZPRecommendVC.swift in Sources */,
 				6E8C05E31DAE836F005F6316 /* ZPGameView.swift in Sources */,
 				6E38A3E51DAE2763003C1208 /* UIImage.swift in Sources */,
+				6E7EB4431DAFB89600ED5547 /* ZPGameVM.swift in Sources */,
 				6E8C05EB1DAE83F4005F6316 /* ZPGameVC.swift in Sources */,
 				6E8C05E21DAE836F005F6316 /* ZPGameCell.swift in Sources */,
 				6E8EA6501DA38E4C00FA523C /* ZPFollowViewCtrl.swift in Sources */,
@@ -563,6 +570,7 @@
 				6E8C05F51DAE85A2005F6316 /* ZPPageView.swift in Sources */,
 				6E1F0F701DABA49F0036F83C /* ZPAnchorGroup.swift in Sources */,
 				6E8FF3E51D9FBD3500AA96EB /* AppDelegate.swift in Sources */,
+				6EE808021DB0D9D400F0A9B5 /* ZPGameModel.swift in Sources */,
 				6E8C05E41DAE836F005F6316 /* ZPHeaderView.swift in Sources */,
 				6E8C05D71DAE8305005F6316 /* ZPCycleModel.swift in Sources */,
 				6EC7439C1D9FFD03006501D6 /* ZPMainTabBarCtrl.swift in Sources */,
